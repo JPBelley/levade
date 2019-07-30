@@ -12,6 +12,46 @@ body {
   padding-bottom: 100vh;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: 100;
+}
+
+@keyframes upperLine {
+  0% {
+    width: 0px;
+    left: 100%;
+    opacity: 0;
+  }
+  100% {
+    width: 100px;
+    left: 0%;
+    opacity: 1;
+  }
+}
+@keyframes lowerLine {
+  0% {
+    width: 0px;
+    right: 100%;
+    opacity: 0;
+  }
+  100% {
+    width: 100px;
+    right: 0%;
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
 h1 {
   text-transform: uppercase;
   color: white;
@@ -21,59 +61,62 @@ h1 {
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
   position: relative;
+  opacity: 0;
   line-height: 1;
   padding: 15px 50px;
+  animation: fadeIn 1.5s 0.2s forwards;
+  animation-timing-function: ease-out;
 
   @media screen and (max-width: 800px) {
     font-size: 50px; 
   }
 }
 
-a {
-  text-decoration: none;
-  color: white;
-  font-weight: 100;
-}
-
 h1::before {
   content: "";
   position: absolute;
-  left: 0;
+  left: 100%;
   top: -10px;
-  width: 100px;
+  width: 0px;
   height: 0;
+  opacity: 0;
   background-color: transparent;
   transition: 0.3s;
   border-top: 2px solid white;
   border-left: 2px solid white;
   pointer-events: none;
+  animation: upperLine 0.8s 0.2s forwards;
+  animation-timing-function: ease-out;
 }
 
-h1:hover::before {
-  width: 0;
-  height: 50px;
-  border-left: 2px solid white;
-}
+// h1:hover::before {
+//   width: 0;
+//   height: 50px;
+//   border-left: 2px solid white;
+// }
 
 h1::after {
   content: "";
   position: absolute;
   right: 0;
   bottom: -10px;
-  width: 100px;
+  width: 0px;
   height: 0;
+  opacity: 0;
   background-color: transparent;
   transition: 0.3s;
   border-bottom: 2px solid white;
   border-right: 2px solid white;
   pointer-events: none;
+  animation: lowerLine 0.8s 0.2s forwards;
+  animation-timing-function: ease-out;
 }
 
-h1:hover::after {
-  width: 0;
-  height: 50px;
-  border-right: 2px solid white;
-}
+// h1:hover::after {
+//   width: 0;
+//   height: 50px;
+//   border-right: 2px solid white;
+// }
 
 
 .headline {
@@ -138,11 +181,19 @@ h2 {
 }
 
 .paragraph {
-  margin: 100px 10px;
-  font-size: 25px;
   color: #000;
   width: 50%;
-  padding-right: 30px; 
+  
+  @media screen and (min-width: 801px) {
+    font-size: 25px;
+    margin: 100px 10px;
+    padding-right: 30px; 
+  }
+  @media screen and (max-width: 800px) {
+    font-size: 22px;
+    margin: 50px 0px;
+    width: 100%;
+  }
   
   p {
     font-family: 'Roboto', sans-serif;
@@ -153,9 +204,18 @@ section.container {
   display: flex;
   align-items: center;
   position: relative;
-  padding: 15vw 10vw 0;
   overflow-x: hidden;
-  min-height: 100vh;
+
+  @media screen and (min-width: 801px) {
+    padding: 15vw 10vw 0;
+    min-height: 100vh;
+  }
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column-reverse;
+    overflow: hidden;
+    padding: 75px 10vw;
+  }
 }
 
 .visible {
