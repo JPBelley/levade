@@ -24,7 +24,7 @@ const AboutSection = () => (
           <Parallax
             y={[-10, 10]}
           >
-            <img src="https://jpbelley.github.io/levade/static/jp_dark-52adc4dd7281453a6ae3ff1d1bc09f9d.jpg" alt="" />
+            <img src={ImageJP} alt="" />
           </Parallax>
         </div>
     </section>

@@ -2,7 +2,7 @@ import React from "react";
 import Swiper from 'react-id-swiper';
 
 import 'react-id-swiper/lib/styles/scss/swiper.scss';
-import HeroImg from './hero/urbex2.jpg';
+import HeroImg from './urbex2.jpg';
 import './hero.scss';
 
 
@@ -10,7 +10,7 @@ const opacityStart = {
   opacity: 1
 }
 const slide1 = {
-  backgroundImage: 'url("https://jpbelley.github.io/levade/static/urbex2-16386b5c5f02b5c00da97e40c3cad2de.jpg")'
+  backgroundImage: 'url("' + HeroImg + '")'
 };
 
 function getRandomArbitrary(min, max) {
