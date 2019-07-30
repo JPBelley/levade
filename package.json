@@ -20,6 +20,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-id-swiper": "^2.3.2",
+    "react-scroll-parallax": "^2.1.2",
     "swiper": "^4.5.0"
   },
   "devDependencies": {
@@ -33,6 +34,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
