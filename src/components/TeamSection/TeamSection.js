@@ -1,9 +1,9 @@
 import React from "react"
 import { Parallax } from 'react-scroll-parallax';
 
-import SingleCard from '../singleCard/SingleCard';
+import Eglise from '../../images/lieux/eglise.jpg';
 
-import './Team.scss';
+import './TeamSection.scss';
 
 const Team = () => (
 
@@ -16,6 +16,34 @@ const Team = () => (
         L'équipe
       </Parallax>
     </h2>
+
+    <div className="name-container left">
+      <div className="name">
+        <span className="first-name">Jean-Philippe</span>
+        <span className="last-name">Belley</span>
+        <div className="name-img-container">
+          <img src={Eglise} alt="" />
+        </div>
+      </div>
+      <div className="name">
+        <span className="first-name">Pierre-Louis</span>
+        <span className="last-name">Gourga</span>
+        <div className="name-img-container">
+          <img src={Eglise} alt="" />
+        </div>
+        </div>
+    </div>
+
+    <div className="name-container right">
+      <div className="name">
+         
+        <span className="first-name">Bat de</span>
+        <span className="last-name">la batte</span>
+        <div className="name-img-container">
+          <img src={Eglise} alt="" />
+        </div>
+      </div>
+    </div>
   </section>
 )
 

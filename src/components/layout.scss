@@ -110,8 +110,9 @@ h1 {
 h2 {
   position: absolute;
   letter-spacing: 0;
-  left: -5vw;
   top: -15vw;
+  left: -5vw;
+  right: 0;
   color: #000;
   text-transform: uppercase;
   font-size: 29vw;
@@ -202,7 +203,7 @@ section.container {
 
   &-full {
     display: flex;
-    padding: 18vw 0;
+    padding: 18vw 0 0;
     position: relative;
     overflow-x: hidden;
   }
