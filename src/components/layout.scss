@@ -55,9 +55,8 @@ a {
 h1 {
   text-transform: uppercase;
   color: white;
-  letter-spacing: 2px;
+  letter-spacing: 10px;
   font-size: 80px;
-  letter-spacing: 15px;
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
   position: relative;
@@ -68,55 +67,39 @@ h1 {
   animation-timing-function: ease-out;
 
   @media screen and (max-width: 800px) {
-    font-size: 50px; 
+    font-size: 45px; 
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    height: 0;
+    opacity: 0;
+    width: 0px;
+    background-color: transparent;
+    background-color: transparent;
+    animation-timing-function: ease-out;
+  }
+
+  &::before {
+    left: 100%;
+    top: -10px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    animation: upperLine 0.8s 0.2s forwards;
+  }
+  
+  &::after {
+    right: 0;
+    bottom: -10px;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    animation: lowerLine 0.8s 0.2s forwards;
   }
 }
 
-h1::before {
-  content: "";
-  position: absolute;
-  left: 100%;
-  top: -10px;
-  width: 0px;
-  height: 0;
-  opacity: 0;
-  background-color: transparent;
-  transition: 0.3s;
-  border-top: 2px solid white;
-  border-left: 2px solid white;
-  pointer-events: none;
-  animation: upperLine 0.8s 0.2s forwards;
-  animation-timing-function: ease-out;
-}
 
-// h1:hover::before {
-//   width: 0;
-//   height: 50px;
-//   border-left: 2px solid white;
-// }
-
-h1::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: -10px;
-  width: 0px;
-  height: 0;
-  opacity: 0;
-  background-color: transparent;
-  transition: 0.3s;
-  border-bottom: 2px solid white;
-  border-right: 2px solid white;
-  pointer-events: none;
-  animation: lowerLine 0.8s 0.2s forwards;
-  animation-timing-function: ease-out;
-}
-
-// h1:hover::after {
-//   width: 0;
-//   height: 50px;
-//   border-right: 2px solid white;
-// }
 
 
 .headline {
@@ -215,6 +198,13 @@ section.container {
     flex-direction: column-reverse;
     overflow: hidden;
     padding: 75px 10vw;
+  }
+
+  &-full {
+    display: flex;
+    padding: 18vw 0;
+    position: relative;
+    overflow-x: hidden;
   }
 }
 

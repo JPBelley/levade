@@ -10,6 +10,7 @@ const AboutSection = () => (
       <h2>
         <Parallax
           y={[8, -8]}
+          x={[-8, 0]}
         >
           À propos
         </Parallax>

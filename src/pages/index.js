@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 import Hero from "../components/hero/hero"
 import AboutSection from "../components/aboutSection/aboutSection"
 import LocationSection from "../components/locationSection/locationSection"
+import TeamSection from "../components/TeamSection/TeamSection"
 
 import { ParallaxProvider } from 'react-scroll-parallax';
 
@@ -18,6 +19,7 @@ const IndexPage = () => (
 
       <AboutSection />
       <LocationSection />
+      <TeamSection />
     </Layout>
   </ParallaxProvider>
 )
